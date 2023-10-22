@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { primary, gradient, neutral } from "./colors.json";
 
+console.log(primary);
+
 const StyledDiv = styled.div`
     color: ${neutral["dark-gray-blue"]};
     display: flex;
