@@ -1,7 +1,12 @@
 import "./App.css";
+import ScoreCard from "./components/ScoreCard.tsx";
+import SummaryCard from "./components/SummaryCard.tsx";
 
-function App() {
-    return <h1>Hello World</h1>;
+export default function App() {
+    return (
+        <>
+            <ScoreCard />
+            <SummaryCard />
+        </>
+    );
 }
-
-export default App;

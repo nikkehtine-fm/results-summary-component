@@ -1,12 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 :root {
     font-family: "Hanken Grotesk", system-ui, Helvetica, sans-serif;
     line-height: 1.5;
-    font-weight: 400;
-
-    color-scheme: light;
-    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    user-select: none;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -16,9 +21,14 @@
 }
 
 body {
-    margin: 0;
     display: flex;
     place-items: center;
     min-width: 320px;
-    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+button {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
 }

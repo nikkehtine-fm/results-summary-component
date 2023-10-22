@@ -2,5 +2,21 @@
     max-width: 1280px;
     margin: 0 auto;
     padding: 2rem;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    min-width: 300px;
+    border-radius: 2rem;
+    @media screen and (max-width: 768px) {
+        height: 100dvh;
+        flex-grow: 1;
+        flex-direction: column;
+        border-radius: 0;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+#root > div {
+    flex: 1 1 0;
+    padding: 2rem;
 }
