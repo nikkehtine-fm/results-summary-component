@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { gradient, neutral } from "./colors.json";
+import changeAlpha from "./alpha";
+import { ScoreCardProps } from "../App";
 
 const StyledDiv = styled.div`
     color: ${neutral.white};
@@ -18,45 +20,72 @@ const StyledDiv = styled.div`
         flex: 1 1 200px;
     }
 
-    .circle {
-        width: 50%;
-        aspect-ratio: 1/1;
-        border-radius: 100%;
-        background: linear-gradient(
-            0deg,
-            ${gradient["persian-blue"]},
-            ${gradient["violet-blue"]}
-        );
-        display: grid;
-        place-items: center;
-        @media screen and (max-width: 768px) {
-            width: 200px;
-        }
+    h1 {
+        color: ${changeAlpha(neutral["white"], 75)};
     }
+
     span {
         display: block;
         margin: 0.5rem;
     }
+
+    #result-title {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    #result-description {
+        color: ${changeAlpha(neutral["white"], 75)};
+        width: 75%;
+        margin-block-end: 1.5rem;
+    }
 `;
 
-export default function ScoreCard() {
+export default function ScoreCard(props: ScoreCardProps) {
     return (
         <StyledDiv>
-            <span>Your result</span>
-            <Score />
-            <span>Great</span>
-            <span>
-                Scored higher than 65% of people who have taken these tests.
-            </span>
+            <h1>Your Result</h1>
+            <Score score={props.score} />
+            <span id="result-title">{props.message}</span>
+            <span id="result-description">{props.description}</span>
         </StyledDiv>
     );
 }
 
-function Score() {
+const Circle = styled.div`
+    width: 66%;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    background: linear-gradient(
+        0deg,
+        ${gradient["persian-blue"]},
+        ${gradient["violet-blue"]}
+    );
+    margin: 1rem;
+    position: relative;
+    display: grid;
+    place-items: center;
+    @media screen and (max-width: 768px) {
+        width: 200px;
+    }
+
+    #result-score {
+        font-size: 4rem;
+        font-weight: 800;
+        position: absolute;
+        transform: translateY(-6.66%);
+    }
+    #result-percent {
+        color: ${changeAlpha(neutral["white"], 50)};
+        position: absolute;
+        bottom: 15%;
+    }
+`;
+
+function Score({ score }: { score: number }) {
     return (
-        <div className="circle">
-            <span>76</span>
-            <span>of 100</span>
-        </div>
+        <Circle>
+            <span id="result-score">{score}</span>
+            <span id="result-percent">of 100</span>
+        </Circle>
     );
 }

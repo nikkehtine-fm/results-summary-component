@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { primary, gradient, neutral } from "./colors.json";
-
-console.log(primary);
+import Progressbar from "./SummaryProgessbars";
+import { gradient, neutral } from "./colors.json";
+import { DataEntry } from "../App";
 
 const StyledDiv = styled.div`
     color: ${neutral["dark-gray-blue"]};
@@ -9,7 +9,7 @@ const StyledDiv = styled.div`
     flex-direction: column;
 `;
 
-export default function SummaryCard() {
+export default function SummaryCard({ data }: any) {
     return (
         <StyledDiv>
             <h1>Summary</h1>
