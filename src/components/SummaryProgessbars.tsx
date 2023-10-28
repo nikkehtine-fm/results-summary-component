@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { primary, neutral } from "./colors.json";
 import changeAlpha from "./alpha";
+import SummaryIcon from "./SummaryIcon";
 
 type ProgressbarProps = {
     icon: string;
@@ -11,7 +12,7 @@ type ProgressbarProps = {
 
 const Graph = styled.div<{ $color: string }>`
     display: flex;
-    grid-gap: 0.1rem;
+    gap: 0.1rem;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
     margin-block: 1rem;
@@ -23,7 +24,7 @@ const Graph = styled.div<{ $color: string }>`
     .category {
         flex-grow: 1;
         color: ${(props) => props.$color};
-        grid-gap: 1rem;
+        gap: 1rem;
         img {
             width: 1.2rem;
         }
@@ -34,7 +35,7 @@ const Graph = styled.div<{ $color: string }>`
         span:first-of-type {
             color: ${neutral["dark-gray-blue"]};
         }
-        grid-gap: 0.3rem;
+        gap: 0.3rem;
     }
 `;
 
@@ -43,7 +44,7 @@ export default function Progressbar({
     category,
     score,
     i,
-}: ProgressbarProps) {
+}: ProgressbarProps): JSX.Element {
     /**
      * Retrieves the color from the colorsArr based on the given index i.
      */
@@ -59,7 +60,7 @@ export default function Progressbar({
     return (
         <Graph $color={color}>
             <div className="category">
-                <img src={icon} aria-hidden alt="icon" />
+                <SummaryIcon source={icon} />
                 <span>{category}</span>
             </div>
             <div className="score">
