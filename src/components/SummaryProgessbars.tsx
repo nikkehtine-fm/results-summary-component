@@ -44,8 +44,6 @@ export default function Progressbar({
     score,
     i,
 }: ProgressbarProps) {
-    icon = icon.replace(".", "src");
-
     /**
      * Retrieves the color from the colorsArr based on the given index i.
      */
