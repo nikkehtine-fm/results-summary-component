@@ -9,11 +9,11 @@ const StyledDiv = styled.div`
     flex-direction: column;
 `;
 
-interface Props {
+export default function SummaryCard({
+    items,
+}: {
     items: DataEntry[];
-}
-
-export default function SummaryCard({ items }: Props): JSX.Element {
+}): JSX.Element {
     return (
         <StyledDiv>
             <h1>Summary</h1>

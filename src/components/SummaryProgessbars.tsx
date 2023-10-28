@@ -17,7 +17,7 @@ const Graph = styled.div<{ $color: string; $value: number }>`
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
     margin-block: 1rem;
-    background-color: ${(props) => changeAlpha(props.$color, 3)};
+    background-color: ${(props) => changeAlpha(props.$color, 5)};
 
     &::before {
         content: "";
