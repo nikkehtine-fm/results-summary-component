@@ -26,7 +26,6 @@ Users should be able to:
 
 Things yet to implement:
 
--   [ ] Box shadow for root card
 -   [ ] Animations
     -   [ ] Button hover transition
     -   [ ] Progress bars loading animations

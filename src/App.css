@@ -6,6 +6,9 @@
     flex-direction: row;
     min-width: 300px;
     border-radius: 2rem;
+    -webkit-box-shadow: 14px 15px 26px 0px rgba(233, 238, 247, 1);
+    -moz-box-shadow: 14px 15px 26px 0px rgba(233, 238, 247, 1);
+    box-shadow: 14px 15px 26px 0px rgba(233, 238, 247, 1);
     @media screen and (max-width: 768px) {
         height: 100dvh;
         flex-grow: 1;
