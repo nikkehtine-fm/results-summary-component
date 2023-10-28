@@ -9,10 +9,19 @@ const StyledDiv = styled.div`
     flex-direction: column;
 `;
 
-export default function SummaryCard({ data }: any) {
+interface Props {
+    items: DataEntry[];
+}
+
+export default function SummaryCard({ items }: Props) {
     return (
         <StyledDiv>
             <h1>Summary</h1>
+            <div className="bars">
+                {items.map((item, index) => (
+                    <Progressbar key={index} {...item} i={index} />
+                ))}
+            </div>
             <Button>Continue</Button>
         </StyledDiv>
     );
@@ -33,5 +42,5 @@ const Button = styled.button`
     border: transparent;
     border-radius: 2rem;
     padding: 1rem;
-    margin-block: 1rem;
+    margin-block: auto;
 `;

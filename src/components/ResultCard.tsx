@@ -30,12 +30,13 @@ const StyledDiv = styled.div`
     }
 
     #result-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
         font-weight: 700;
     }
     #result-description {
         color: ${changeAlpha(neutral["white"], 75)};
-        width: 75%;
+        width: 80%;
+        max-width: 400px;
         margin-block-end: 1.5rem;
     }
 `;
@@ -52,7 +53,7 @@ export default function ScoreCard(props: ScoreCardProps) {
 }
 
 const Circle = styled.div`
-    width: 66%;
+    width: 200px;
     aspect-ratio: 1/1;
     border-radius: 100%;
     background: linear-gradient(

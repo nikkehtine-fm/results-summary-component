@@ -1,5 +1,5 @@
 import "./App.css";
-import ScoreCard from "./components/ScoreCard.tsx";
+import ResultCard from "./components/ResultCard.tsx";
 import SummaryCard from "./components/SummaryCard.tsx";
 import data from "./assets/data.json";
 
@@ -19,14 +19,14 @@ const overviewData: ScoreCardProps = {
     score: 76,
     message: "Great",
     description:
-        "You scored higher than 65% of people who have taken these tests.",
+        "You scored higher than 65% of the people who have taken these tests.",
 };
 
 export default function App() {
     return (
         <>
-            <ScoreCard {...overviewData} />
-            <SummaryCard {...data} />
+            <ResultCard {...overviewData} />
+            <SummaryCard items={...data} />
         </>
     );
 }
