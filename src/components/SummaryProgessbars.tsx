@@ -35,8 +35,9 @@ const Graph = styled.div<{ $color: string; $value: number }>`
         z-index: 1;
     }
     .category {
-        flex-grow: 1;
+        font-weight: 700;
         color: ${(props) => props.$color};
+        flex-grow: 1;
         gap: 1rem;
         img {
             width: 1.2rem;
