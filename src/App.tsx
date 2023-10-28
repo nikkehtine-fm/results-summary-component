@@ -26,7 +26,7 @@ export default function App() {
     return (
         <>
             <ResultCard {...overviewData} />
-            <SummaryCard items={...data} />
+            <SummaryCard items={data} />
         </>
     );
 }
