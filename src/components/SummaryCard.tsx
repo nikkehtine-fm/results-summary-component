@@ -13,7 +13,7 @@ interface Props {
     items: DataEntry[];
 }
 
-export default function SummaryCard({ items }: Props) {
+export default function SummaryCard({ items }: Props): JSX.Element {
     return (
         <StyledDiv>
             <h1>Summary</h1>

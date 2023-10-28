@@ -41,7 +41,7 @@ const StyledDiv = styled.div`
     }
 `;
 
-export default function ScoreCard(props: ScoreCardProps) {
+export default function ScoreCard(props: ScoreCardProps): JSX.Element {
     return (
         <StyledDiv>
             <h1>Your Result</h1>
@@ -82,7 +82,7 @@ const Circle = styled.div`
     }
 `;
 
-function Score({ score }: { score: number }) {
+function Score({ score }: { score: number }): JSX.Element {
     return (
         <Circle>
             <span id="result-score">{score}</span>
