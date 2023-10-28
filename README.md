@@ -27,11 +27,17 @@ Users should be able to:
 Things yet to implement:
 
 -   [ ] Box shadow for root card
--   [ ] Button hover transition
+-   [ ] Animations
+    -   [ ] Button hover transition
+    -   [ ] Progress bars loading animations
+    -   [ ] Counting up the score on result card
 
 Things I _might_ implement:
 
 -   [ ] Interactive values (with hooks)
+-   [ ] Action on button click (either one of):
+    -   Overlay
+    -   Rendering a page
 
 ### Screenshot
 
