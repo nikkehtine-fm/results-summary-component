@@ -9,7 +9,6 @@ import icon_visual from "../assets/icon-visual.svg";
  * Another hilariously overengineered solution. Just how I like them.
  */
 export default function Icon(props: { source: string }): JSX.Element {
-    console.log(props.source);
     let icon: string;
     let paths: string[] = props.source.split("/");
     let target: string = paths[2].slice(
