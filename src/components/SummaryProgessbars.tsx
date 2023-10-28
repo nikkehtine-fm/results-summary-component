@@ -10,16 +10,29 @@ type ProgressbarProps = {
     i: number;
 };
 
-const Graph = styled.div<{ $color: string }>`
+const Graph = styled.div<{ $color: string; $value: number }>`
     display: flex;
+    position: relative;
     gap: 0.1rem;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
     margin-block: 1rem;
-    background-color: ${(props) => changeAlpha(props.$color, 5)};
+    background-color: ${(props) => changeAlpha(props.$color, 3)};
 
+    &::before {
+        content: "";
+        background-color: ${(props) => changeAlpha(props.$color, 10)};
+        height: 100%;
+        width: ${(props) => props.$value}%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        border-radius: inherit;
+    }
     > div {
         display: flex;
+        z-index: 1;
     }
     .category {
         flex-grow: 1;
@@ -58,7 +71,7 @@ export default function Progressbar({
     let color: string = getBarColor(i);
 
     return (
-        <Graph $color={color}>
+        <Graph $color={color} $value={score}>
             <div className="category">
                 <SummaryIcon source={icon} />
                 <span>{category}</span>
