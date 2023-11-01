@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import CountUp from "react-countup";
 import { gradient, neutral } from "./colors.json";
 import changeAlpha from "./alpha";
 import { ScoreCardProps } from "../App";
@@ -85,7 +86,9 @@ const Circle = styled.div`
 function Score({ score }: { score: number }): JSX.Element {
     return (
         <Circle>
-            <span id="result-score">{score}</span>
+            <span id="result-score">
+                <CountUp end={score} />
+            </span>
             <span id="result-percent">of 100</span>
         </Circle>
     );

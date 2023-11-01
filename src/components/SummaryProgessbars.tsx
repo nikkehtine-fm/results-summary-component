@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import React, { useRef } from "react";
+import CountUp, { useCountUp } from "react-countup";
 import { primary, neutral } from "./colors.json";
 import changeAlpha from "./alpha";
 import SummaryIcon from "./SummaryIcon";
@@ -71,6 +73,13 @@ export default function Progressbar({
     };
     let color: string = getBarColor(i);
 
+    const progressRef = useRef<HTMLDivElement>(null);
+    const countUp = useCountUp({
+        ref: progressRef,
+        end: score,
+        delay: i / 4,
+    });
+
     return (
         <Graph $color={color} $value={score}>
             <div className="category">
@@ -78,7 +87,9 @@ export default function Progressbar({
                 <span>{category}</span>
             </div>
             <div className="score">
-                <span>{score}</span>
+                <span>
+                    <CountUp delay={i / 4 + 1} end={score}></CountUp>
+                </span>
                 <span>/</span>
                 <span>100</span>
             </div>
